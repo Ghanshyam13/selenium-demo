@@ -17,25 +17,25 @@ public class amazondemo {
 
 		@Test(priority = 0)
 		public void testJbkTitle() {
-			driver.get("https://www.myntra.com/");
+			driver.get("https://www.amazon.in");
 			String title = driver.getTitle();
 			System.out.println(title);
 			Assert.assertEquals(title,
-					"Online Shopping for Women, Men, Kids fashion & Lifestyle - Myntra");
+					"Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in");
 			// driver.manage().window().setPosition(new Point(100,30));
 		}
 
 		@Test(priority = 1)
 		public void testJbkTitleInvalid() {
 			driver.manage().window().maximize();			
-			WebElement SearchBox = driver.findElement(By.(class("desktop-searchBar")));
-			SearchBox.sendKeys("Apple Laptop");
+			WebElement SearchBox = driver.findElement(By.id("twotabsearchtextbox"));
+			SearchBox.sendKeys("Hp Laptop");
 
 		}
 
 		@Test(priority = 2)
 		public void testJbkTitlesubmit() {
-			WebElement SearchIcon = driver.findElement(By.class("desktop-submit"));
+			WebElement SearchIcon = driver.findElement(By.id("nav-search-submit-button"));
 			SearchIcon.click();
 		}
 
@@ -54,7 +54,7 @@ public class amazondemo {
 		}
 		@BeforeTest
 		public void beforeTest() {
-			System.setProperty("webdriver.chrome.driver", "C:\\Setups\\Chromedriver\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");
 			driver = new ChromeDriver();
 		}
 
