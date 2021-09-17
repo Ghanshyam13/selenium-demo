@@ -28,14 +28,14 @@ public class amazondemo {
 		@Test(priority = 1)
 		public void testJbkTitleInvalid() {
 			driver.manage().window().maximize();			
-			WebElement SearchBox = driver.findElement(By.id("input.desktop-searchBar"));
+			WebElement SearchBox = driver.findElement(By.class("desktop-searchBar"));
 			SearchBox.sendKeys("Apple Laptop");
 
 		}
 
 		@Test(priority = 2)
 		public void testJbkTitlesubmit() {
-			WebElement SearchIcon = driver.findElement(By.id("desktop-submit"));
+			WebElement SearchIcon = driver.findElement(By.class("desktop-submit"));
 			SearchIcon.click();
 		}
 
