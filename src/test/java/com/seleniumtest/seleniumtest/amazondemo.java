@@ -28,7 +28,7 @@ public class amazondemo {
 		@Test(priority = 1)
 		public void testJbkTitleInvalid() {
 			driver.manage().window().maximize();			
-			WebElement SearchBox = driver.findElement(By.class("desktop-searchBar"));
+			WebElement SearchBox = driver.findElement(By.(class("desktop-searchBar")));
 			SearchBox.sendKeys("Apple Laptop");
 
 		}
