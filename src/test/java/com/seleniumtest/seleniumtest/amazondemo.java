@@ -17,25 +17,25 @@ public class amazondemo {
 
 		@Test(priority = 0)
 		public void testJbkTitle() {
-			driver.get("https://www.amazon.in");
+			driver.get("https://www.myntra.com/");
 			String title = driver.getTitle();
 			System.out.println(title);
 			Assert.assertEquals(title,
-					"Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in");
+					"Online Shopping for Women, Men, Kids fashion & Lifestyle - Myntra");
 			// driver.manage().window().setPosition(new Point(100,30));
 		}
 
 		@Test(priority = 1)
 		public void testJbkTitleInvalid() {
 			driver.manage().window().maximize();			
-			WebElement SearchBox = driver.findElement(By.id("twotabsearchtextbox"));
+			WebElement SearchBox = driver.findElement(By.id("input.desktop-searchBar"));
 			SearchBox.sendKeys("Apple Laptop");
 
 		}
 
 		@Test(priority = 2)
 		public void testJbkTitlesubmit() {
-			WebElement SearchIcon = driver.findElement(By.id("nav-search-submit-button"));
+			WebElement SearchIcon = driver.findElement(By.id("desktop-submit"));
 			SearchIcon.click();
 		}
 
